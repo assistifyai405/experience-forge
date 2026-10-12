@@ -4,7 +4,7 @@ type: software
 title: "Experience Forge: observable external-memory reuse under calibration outage"
 authors:
   - name: "Experience Forge contributors"
-version: 0.4.0
+version: 0.5.0
 date-released: 2026-10-12
 license: MIT
 abstract: >-

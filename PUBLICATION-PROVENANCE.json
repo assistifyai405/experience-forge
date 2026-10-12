@@ -1,6 +1,6 @@
 {
   "version": "0.4.0",
-  "status": "local publication candidate; not published",
+  "status": "public release preparation authorized by user",
   "original_private_archive_sha256": "4026f96d859e584fa3ba553667226a2adccd867284cde34434ae2cd888dde8b0",
   "benchmark_code_and_raw_evidence_changed": false,
   "source_hashes": {
@@ -67,7 +67,21 @@
     "scripts/privacy_audit.py",
     "scripts/check_links.py",
     "evidence/reuse-complete.zip",
-    "reports/overview.png"
+    "reports/overview.png",
+    "daily_workchat/",
+    "tests/test_daily_workchat.py",
+    "docs/DAILY-WORKCHAT.md",
+    "daily_workchat/install.py",
+    "docs/RELEASE-NOTES-0.5.0.md"
   ],
-  "preserved_raw_run_manifest_sha256": "e854459de86e31a916385845ccd604fe4fe4e41018b76b6598e1789212b52157"
+  "preserved_raw_run_manifest_sha256": "e854459de86e31a916385845ccd604fe4fe4e41018b76b6598e1789212b52157",
+  "publication_version": "0.5.0",
+  "daily_workchat_adapter": {
+    "version": "1.0.0",
+    "original_benchmark_changed": false,
+    "private_user_bank_included": false,
+    "private_global_config_included": false,
+    "cloud_chat_integration_claimed": false
+  },
+  "user_publication_authorized": true
 }

@@ -1,8 +1,21 @@
 # Experience Forge
 
+[![Tests and captured replay](https://github.com/assistifyai405/experience-forge/actions/workflows/checks.yml/badge.svg)](https://github.com/assistifyai405/experience-forge/actions/workflows/checks.yml) · [Release v0.5.0](https://github.com/assistifyai405/experience-forge/releases/tag/v0.5.0)
+
 **Observable external-memory reuse when fresh calibration is unavailable.**
 
 A local research prototype that turns observed connector experience into typed, persistent rule candidates. One real tool agent, one synthetic affine connector family, three memory treatments, five frozen seeds and replayable evidence. Retrieve a memory, apply its rule with supporting observations, then verify the committed state: those are three separate outcomes.
+
+## Daily use in local workchats
+
+The **0.5.0 public release** includes a portable daily-workchat adapter alongside the unchanged 0.4.0 research pilot. It recalls evidence-backed lessons before a task and records useful observations afterwards. Project-specific lessons stay separate; portable workflows require explicit selection.
+
+```bash
+python -m daily_workchat.forge_daily begin --project . --chat your-actual-chat-id --query "release verification"
+python -m daily_workchat.forge_daily status
+```
+
+Personal data is stored outside this checkout. The public repository contains **no user memory bank, chat logs or personal configuration**. [Daily workflow setup](docs/DAILY-WORKCHAT.md) covers the global skill, local MCP tools and CLI fallback. This adapter does not automatically connect ordinary ChatGPT web/mobile chats and does not establish new model-performance results.
 
 ## Recorded pilot
 
@@ -29,7 +42,7 @@ python -X utf8 scripts/offline_tests.py
 
 The bundled evidence ZIP is 171 KB (approximately), contains the full captured 0.4 pilot and is checked by SHA-256 before extraction. Verification regenerates fixture labels, rechecks actual proposals and qualification, reopens SQLite condition memory and replays **195 captured agent rollouts**, including **180 final rollouts and 763 inference calls**, through the real tools. It makes **zero new model calls** and denies Python network connections. Scripted test/reference controls are separate from actual model scores.
 
-**53 tests and full replay passed locally on Linux and native Windows with UTF-8 enabled.** CI is configured for Ubuntu/Windows on Python 3.11/3.14; hosted CI has not yet run. [Contribution instructions](CONTRIBUTING.md) explain how to preserve the source-bound evidence when changing experimental code.
+**53 original tests, 12 daily-adapter and installation tests and the full captured replay passed locally with UTF-8 enabled.** Hosted CI runs Ubuntu/Windows on Python 3.11/3.14; its status is visible on GitHub. [Contribution instructions](CONTRIBUTING.md) explain how to preserve the source-bound evidence when changing experimental code.
 
 ## Inspect the report
 
