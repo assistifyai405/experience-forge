@@ -72,10 +72,11 @@
     "tests/test_daily_workchat.py",
     "docs/DAILY-WORKCHAT.md",
     "daily_workchat/install.py",
-    "docs/RELEASE-NOTES-0.5.0.md"
+    "docs/RELEASE-NOTES-0.5.0.md",
+    "docs/RELEASE-NOTES-0.5.1.md"
   ],
   "preserved_raw_run_manifest_sha256": "e854459de86e31a916385845ccd604fe4fe4e41018b76b6598e1789212b52157",
-  "publication_version": "0.5.0",
+  "publication_version": "0.5.1",
   "daily_workchat_adapter": {
     "version": "1.0.0",
     "original_benchmark_changed": false,
@@ -83,5 +84,7 @@
     "private_global_config_included": false,
     "cloud_chat_integration_claimed": false
   },
-  "user_publication_authorized": true
+  "user_publication_authorized": true,
+  "captured_replay_python": "3.14",
+  "compatibility_correction": "Exact immutable timing aggregates require recorded Python 3.14; Python 3.11 remains supported for unit controls and daily adapter."
 }

@@ -19,6 +19,8 @@ def deny_network(*args, **kwargs):
 
 
 def main():
+    if sys.version_info[:2] != (3, 14):
+        raise SystemExit("Exact captured replay requires Python 3.14, matching the recorded aggregate arithmetic. The daily adapter and unit tests support Python 3.11+. No evidence is modified.")
     checksums = json.loads((root / 'evidence/checksums.json').read_text(encoding='utf-8'))
     archive = root / 'evidence/reuse-complete.zip'
     if set(checksums) != {'reuse-complete.zip'} or sha256(archive.read_bytes()).hexdigest() != checksums['reuse-complete.zip']:

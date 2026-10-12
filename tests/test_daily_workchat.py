@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import sys
 from daily_workchat.forge_daily import Bank, scope
 
 class DailyTests(unittest.TestCase):
@@ -46,6 +47,10 @@ class DailyTests(unittest.TestCase):
             self.bank.remember('a','b','title','api_key=secret',[],[str(self.source)])
     def test_windows_and_wsl_project_scope_agree(self):
         self.assertEqual(scope('C:/projects/DemoRoot'),scope('/mnt/c/projects/DemoRoot'))
+    @unittest.skipIf(sys.platform == 'win32', 'POSIX case-sensitive project scope')
+    def test_posix_project_names_are_case_sensitive(self):
+        self.assertNotEqual(scope('/project-A'), scope('/project-a'))
+
     def test_usage_for_every_chat(self):
         for chat in ('chat-a','chat-b','chat-c'):
             self.bank.recall('project-a',chat,'release')

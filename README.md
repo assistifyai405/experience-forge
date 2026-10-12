@@ -1,6 +1,6 @@
 # Experience Forge
 
-[![Tests and captured replay](https://github.com/assistifyai405/experience-forge/actions/workflows/checks.yml/badge.svg)](https://github.com/assistifyai405/experience-forge/actions/workflows/checks.yml) · [Release v0.5.0](https://github.com/assistifyai405/experience-forge/releases/tag/v0.5.0)
+[![Tests and captured replay](https://github.com/assistifyai405/experience-forge/actions/workflows/checks.yml/badge.svg)](https://github.com/assistifyai405/experience-forge/actions/workflows/checks.yml) · [Release v0.5.1](https://github.com/assistifyai405/experience-forge/releases/tag/v0.5.1)
 
 **Observable external-memory reuse when fresh calibration is unavailable.**
 
@@ -8,7 +8,7 @@ A local research prototype that turns observed connector experience into typed, 
 
 ## Daily use in local workchats
 
-The **0.5.0 public release** includes a portable daily-workchat adapter alongside the unchanged 0.4.0 research pilot. It recalls evidence-backed lessons before a task and records useful observations afterwards. Project-specific lessons stay separate; portable workflows require explicit selection.
+The **0.5.1 public release** includes a portable daily-workchat adapter alongside the unchanged 0.4.0 research pilot. It recalls evidence-backed lessons before a task and records useful observations afterwards. Project-specific lessons stay separate; portable workflows require explicit selection.
 
 ```bash
 python -m daily_workchat.forge_daily begin --project . --chat your-actual-chat-id --query "release verification"
@@ -33,7 +33,7 @@ Without memory, outage tasks deliberately lack historical evidence. The study me
 
 ## Verify the actual captured run
 
-Requires only **Python 3.11+**. No packages, API key, model download or Ollama service are needed for replay:
+Exact captured-evidence replay requires **Python 3.14**, matching the recorded floating-point aggregate arithmetic. The daily adapter and unit controls support Python 3.11+. No packages, API key, model download or Ollama service are needed for replay:
 
 ```bash
 python -X utf8 scripts/verify_publication.py
@@ -42,7 +42,7 @@ python -X utf8 scripts/offline_tests.py
 
 The bundled evidence ZIP is 171 KB (approximately), contains the full captured 0.4 pilot and is checked by SHA-256 before extraction. Verification regenerates fixture labels, rechecks actual proposals and qualification, reopens SQLite condition memory and replays **195 captured agent rollouts**, including **180 final rollouts and 763 inference calls**, through the real tools. It makes **zero new model calls** and denies Python network connections. Scripted test/reference controls are separate from actual model scores.
 
-**53 original tests, 12 daily-adapter and installation tests and the full captured replay passed locally with UTF-8 enabled.** Hosted CI runs Ubuntu/Windows on Python 3.11/3.14; its status is visible on GitHub. [Contribution instructions](CONTRIBUTING.md) explain how to preserve the source-bound evidence when changing experimental code.
+**53 original tests, 13 daily-adapter and installation tests (one POSIX-only scope test is skipped on Windows) and the full captured replay passed locally with UTF-8 enabled.** Hosted CI runs unit controls on Ubuntu/Windows with Python 3.11/3.14 and exact captured replay on Python 3.14; its status is visible on GitHub. [Contribution instructions](CONTRIBUTING.md) explain how to preserve the source-bound evidence when changing experimental code.
 
 ## Inspect the report
 

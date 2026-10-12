@@ -34,6 +34,7 @@ jobs:
       - name: Run unit and integration controls without network
         run: python -X utf8 scripts/offline_tests.py
       - name: Verify original captured agent evidence without network
+        if: matrix.python == '3.14'
         run: python -X utf8 scripts/verify_publication.py
       - name: Check public text, links and metadata
         run: |

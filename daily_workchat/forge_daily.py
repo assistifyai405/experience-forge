@@ -34,7 +34,7 @@ def scope(project):
     value = str(local_path(project)).replace('\\', '/')
     if re.match(r'^[A-Za-z]:/', value):
         value = '/mnt/' + value[0].lower() + value[2:]
-    return value.casefold()
+    return value.casefold() if re.match(r'^/mnt/[a-z]/', value) else value
 
 
 def evidence(paths):
