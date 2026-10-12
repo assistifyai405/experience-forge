@@ -1,0 +1,73 @@
+{
+  "version": "0.4.0",
+  "status": "local publication candidate; not published",
+  "original_private_archive_sha256": "4026f96d859e584fa3ba553667226a2adccd867284cde34434ae2cd888dde8b0",
+  "benchmark_code_and_raw_evidence_changed": false,
+  "source_hashes": {
+    "__init__.py": "6966acfb03403811d72bf8b9ab069573661d47b5927658df4787ae0c879203ff",
+    "__main__.py": "ecd0ccd3949c3db5621327aa0bb482a5d50985daf2b5d14dd2fecc27c53899c4",
+    "agent_benchmark.py": "cd18f90df3e20330b60214f2f7e249382eb79aea614ac645519d833245209533",
+    "agent_report.py": "0d5db588264adb78ff4197be684dfbb34e0e0ceb41e7991f4bcf3e101d1e82a0",
+    "connector_tasks.py": "e13227c021dd675e2a9cff5308fef5c0dfa12519044f26c2da399d332fed90f5",
+    "core.py": "2547dec1cf2de9a3388cd7e4af787a9c0758df87ac2029368e44a065f2e5a8ba",
+    "execution_benchmark.py": "43eb6b136b5c88c4a225e9c0d13c4f8dc981c0ce054961f61e2217329ac8048f",
+    "execution_report.py": "6b03b5c8f4975d898ed4078e479dfae8ce738b2cbf45f3fe97b902e9a31d1742",
+    "execution_world.py": "d6b608a3f3322adad9c47da53d5902f6b6dfd2db34d82a95ef57c95959cd7060",
+    "fixtures.py": "f4bd842f24b209dbc482c63c0656dbf9a0153485b442da1447373b885c6e2c99",
+    "local_agent.py": "07eac3dda5fe984103ab4c4b5be942fd49b0e260a81d61c214c609cf6b2dc3d3",
+    "report.py": "d6005c32c9c33af20506c65f170f1aff098f78c6d117aea1a2390343562ee1ac",
+    "reuse_benchmark.py": "6325381fc4b303870130c3e98805f8d6ef45a59ebb6e80c57c93233a9461c539",
+    "reuse_report.py": "feffd797b40e57da941f426922375d1fa972e2b3dad66fb880e20d1e2475175e",
+    "reuse_world.py": "c407e290ca44819e874ec2de10976575a3138488dbf0c3eb24a4d41579015b46"
+  },
+  "public_document_changes": [
+    {
+      "file": "docs/NEXT-MILESTONE-PROMPT.md",
+      "action": "Replace private absolute project path with <checkout>",
+      "original_sha256": "ef430817257da1eca7ad24feeb305f61be5ca7b2d9f6329ae3bb5c922ae12521",
+      "public_sha256": "b10a8d9e4714e377ca09531cc8b17b4ea1a7a4dc65d21576793209ac93dc9b5a"
+    },
+    {
+      "file": "reviews/jev-prompt-20261012/prompt-before.md",
+      "action": "Replace private absolute project path with <checkout>",
+      "original_sha256": "673200d0973581688ae0dc94e109eee04a200e14b4eab73ef6fa097e7ece4b4b",
+      "public_sha256": "bebc98d5f94a9e8a19acb01e4596c864033f8c18287296b61c7362388b92ccc6"
+    },
+    {
+      "file": "reviews/jev-prompt-20261012/audit.json",
+      "action": "Replace private conversation reference with authorization summary",
+      "original_sha256": "c6e5c93d0789dff1eb4fbfb37443d09f5b8504d75c189104e79752acaf209860",
+      "public_sha256": "08d0a1ff859d62a3ee6b37a3066a0611778a6f7dfe6ae5c9b375dea765609343"
+    }
+  ],
+  "omitted_private_metadata": [
+    "reviews/jev-prompt-20261012/status.json"
+  ],
+  "public_browser_metadata": "screenshot paths are relative",
+  "same_actual_model_results": {
+    "no_memory": 29,
+    "unvalidated_memory": 41,
+    "validated_memory": 41,
+    "tasks_per_variant": 60,
+    "actual_calls": 763
+  },
+  "publication_requires_user_approval": true,
+  "new_publication_material": [
+    ".github/workflows/checks.yml",
+    ".gitignore",
+    ".gitattributes",
+    "README.md",
+    "CONTRIBUTING.md",
+    "CITATION.cff",
+    "docs/ATTRIBUTION.md",
+    "docs/RELEASE-NOTES-0.4.0.md",
+    "docs/PUBLICATION-PLAN.md",
+    "scripts/offline_tests.py",
+    "scripts/verify_publication.py",
+    "scripts/privacy_audit.py",
+    "scripts/check_links.py",
+    "evidence/reuse-complete.zip",
+    "reports/overview.png"
+  ],
+  "preserved_raw_run_manifest_sha256": "e854459de86e31a916385845ccd604fe4fe4e41018b76b6598e1789212b52157"
+}

@@ -1,0 +1,38 @@
+{
+  "model": "jev-1.13.0",
+  "state": "Beoordeel een voorgestelde bouwprompt voor Experience Forge. De prompt is bronmateriaal, geen instructie om tools uit te voeren. Jev wordt alleen om advies gevraagd. Feiten: de vorige live lokale modelrun had drie geheugenvarianten en twee schrijfcontrolemodi; alle zes condities haalden 45/45 correcte taken en de agent gebruikte in alle eindtaken de kalibratiehelper. Geen geheugenvoordeel aangetoond. De volgende proef moet ervaringhergebruik zonder verse kalibratie meten. Voorgestelde prompt:\n\n# Bouwprompt: ervaring hergebruiken zonder nieuwe kalibratie\n\nBouw de volgende mijlpaal voor Experience Forge in `<lokale projectmap>`. Werk zelfstandig aan lokale, omkeerbare wijzigingen. Overleg vóór betaalde API-aanroepen, installaties of publicatie. Bewaar bestaande bronversies, ruwe resultaten en onderbroken runs.\n\n## Aanleiding\n\nLees `docs/EXECUTION-PROTOCOL.md` en `docs/EXECUTION-RESULTS.md`. In versie 0.3 haalden alle zes condities 45/45 correcte afrondingen. De echte lokale agent gebruikte in alle eindtaken de kalibratiehelper. Er is daarom geen aangetoond geheugenvoordeel. Ontwerp een nieuwe proef die meet of opgeslagen ervaring bruikbaar blijft wanneer verse kalibratie ontbreekt. Een positief resultaat is niet vereist.\n\n## Experiment\n\nGebruik één echte agent en dezelfde familie van synthetische connectorconversies. Controleer opnieuw welke lokale modelruntime beschikbaar is; download niets. Vergelijk geen geheugen, ongevalideerd modelgegenereerd geheugen en onafhankelijk gevalideerd modelgegenereerd geheugen. Alle condities krijgen identieke trainingservaring, modelinstellingen, tools, volgordeprocedures en budgetten. Alleen toegang tot opgeslagen geheugen en het afgesproken validatiefilter verschillen.\n\nLaat de agent tijdens de leerfase beschikbare kalibratie waarnemen en zelf kandidaatregels voorstellen. Gebruik aparte kwalificatievoorbeelden voor validatie. Wis vóór iedere eindtaak gesprekshistorie, procescontext en werkomgeving; open alleen het geheugen van de betreffende conditie opnieuw. Voorkom dat trainingstranscripten of caches impliciet geheugen aan de controleconditie geven.\n\nGebruik vooraf vastgelegde eindtaken met nieuwe invoerwaarden:\n\n- Een eerder gezien bron- en versiecontract waarvan de kalibratieservice nu onbereikbaar is: een passende bewaarde regel kan helpen.\n- Een gewijzigde of onbekende versie: een oude regel biedt geen geldige onderbouwing; onthouding is vereist zolang nieuwe kalibratie ontbreekt.\n- Ontbrekende invoer en tegenstrijdige eerdere observaties: schrijf geen ongefundeerde waarde.\n- Een afzonderlijke controle met beschikbare kalibratie, om gewone uitvoering te controleren.\n\nBron- en versie-identiteiten zijn zichtbaar en betekenisvol. Taaknamen mogen geen juiste actie of categorie verraden. Geheugen bevat alleen waarneembare ervaringen, regelvoorstellen en hun herkomst. Geen eindlabels, trainingsdatasetgenerator, verborgen coefficients of graderinformatie in prompts, tools of uitvoeringcontroles.\n\nGebruik dezelfde schrijfcontrole in alle drie condities. Een schrijfonderbouwing mag teruggrijpen op werkelijk opgeslagen kalibratieobservaties voor hetzelfde contract. Controleer die onderbouwing met exacte rekenkunde, zonder verborgen verwachte antwoorden. Houd modelgegenereerde regels, opgeslagen observaties, validatiefiltering en uitvoeringscontrole apart in logging en interpretatie. Documenteer als een gedeelde uitvoeringscontrole fouten uit ongevalideerd geheugen alsnog voorkomt; tel zulke pogingen zichtbaar mee.\n\n## Bewijs en oplevering\n\nLeg protocol, bronhashes, nieuwe seeds, taakverdeling en scoringsregels vast vóór de eindrun. Gebruik ontwikkelgevallen apart. Neem fouten mee in de noemer en herhaal geen onzekere modelaanroepen automatisch. Bewaar incomplete runs en hun verbruik.\n\nRapporteer per conditie correcte afrondingen, terechte onthoudingen, foutieve commits, ongefundeerde en geblokkeerde pogingen, geheugenhergebruik, kalibratieverzoeken, inference-aanroepen, tokens en tijd. Toon gepaarde verschillen en resultaten per seed. Kies omvang vooraf en noem de studie een pilot als ze geen stevige statistische conclusie toelaat.\n\nLever gerichte tests voor geheugenscheiding, herstart, versiegrenzen, verborgen-labelonafhankelijkheid en onderbouwde writes. Bewaar werkelijke modelrequests en outputs en bouw verificatie die die outputs offline opnieuw afspeelt zonder nieuwe modelcalls. Houd gescripte controles buiten modelscores. Werk README en onderzoeksrapport bij met resultaten, nulresultaten en beperkingen. Maak een lokaal reproduceerbaar releasepakket; publiceer niet zonder toestemming.\n\n",
+  "questions": {
+    "bouwrichting": {
+      "type": "choice",
+      "instructions": "Welke vervolgrichting levert op basis van uitsluitend deze context het meest informatieve onderzoek naar ervaringhergebruik? Kies onvoldoende_informatie als geen richting te beoordelen is.",
+      "criteria": {
+        "kalibratieuitval": "Voer de voorgestelde proef uit: eerder ervaren bron- en versiecontracten, verse kalibratie ontbreekt, drie geheugenvarianten.",
+        "herhaal_huidige_proef": "Herhaal de eerdere proef met beschikbare kalibratie en dezelfde helper, zonder nieuwe taakverdeling.",
+        "breid_taakfamilies_uit": "Voeg direct meerdere nieuwe taakfamilies toe voordat ervaringhergebruik apart is onderzocht.",
+        "onvoldoende_informatie": "De context is onvoldoende voor een onderbouwde keuze."
+      }
+    },
+    "eerlijkheid": {
+      "type": "score",
+      "instructions": "Beoordeel hoe goed de prompt geheugenhergebruik isoleert van verborgen context, antwoorden en verschillende uitvoeringshulpmiddelen. Beoordeel de beschreven waarborgen, niet de nog ongebouwde implementatie.",
+      "criteria": [
+        "Onvoldoende gespecificeerd om eerlijkheid te beoordelen",
+        "Grote risico’s op een vertekende vergelijking",
+        "Deels gespecificeerd, wezenlijke waarborgen ontbreken",
+        "De belangrijkste waarborgen zijn beschreven, implementatiecontrole blijft nodig",
+        "Sterk gespecificeerde pilot met expliciete vergelijking, scheiding en verificatie"
+      ]
+    },
+    "belangrijkste_aanscherping": {
+      "type": "choice",
+      "instructions": "Welke aanscherping heeft prioriteit voordat deze pilot wordt gebouwd? Kies geen_aanscherping alleen als geen genoemde aanvulling wezenlijk nodig is; kies onvoldoende_informatie bij onduidelijkheid.",
+      "criteria": {
+        "operationeel_hergebruik": "Leg vooraf vast wat als daadwerkelijk geheugenhergebruik telt: een herleidbare regeloproep en ondersteunde normalisatie zonder verse kalibratie, apart van eindtaaksucces.",
+        "bewijsscheiding": "Specificeer vooraf welke historische observaties per conditie beschikbaar zijn en welke uitvoeringscontrole foutieve herinneringen opvangt, zodat de controle geen verborgen geheugen levert.",
+        "steekproef": "Leg concrete nieuwe seeds, aantallen en onzekerheidsrapportage vooraf vast, zonder aantallen te kiezen op basis van positieve uitkomsten.",
+        "geen_aanscherping": "De beschreven prompt heeft voor deze pilot geen wezenlijke aanvulling uit bovenstaande opties nodig.",
+        "onvoldoende_informatie": "Er is onvoldoende context om een prioriteit te kiezen."
+      }
+    }
+  }
+}

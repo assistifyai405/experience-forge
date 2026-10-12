@@ -1,0 +1,51 @@
+<!doctype html><html lang="nl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Experience Forge · ervaring hergebruiken</title>
+<style>body{margin:0;background:#10151d;color:#eaf0f7;font:16px/1.6 system-ui}main{max-width:1150px;margin:auto;padding:32px 20px}h1{font-size:clamp(28px,5vw,44px)}.card{background:#1b2330;border:1px solid #354254;border-radius:14px;padding:20px;margin:20px 0}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th,td{text-align:left;border-bottom:1px solid #354254;padding:12px}th{color:#81dfc2}small{color:#bcc9d8}summary{cursor:pointer;color:#81dfc2}pre{white-space:pre-wrap;overflow-wrap:anywhere}a{color:#81dfc2}footer{overflow-wrap:anywhere}</style>
+<main><small>Experience Forge 0.4 · lokale echte agent · bevroren pilot</small><h1>Ervaring gebruiken wanneer kalibratie ontbreekt</h1>
+<p>Een zichtbaar opgehaalde herinnering is pas hergebruikt als de agent haar regel met passende observaties toepast op een nieuwe invoer. Een correcte commit wordt apart geteld.</p>
+<div class="card scroll"><table><thead><tr><th>Geheugen</th><th>Alle taken</th><th>Opgehaald</th><th>Gebruik geprobeerd</th><th>Onderbouwd gebruikt</th><th>Opgeslagen én teruggelezen</th><th>Foute commits</th><th>Geblokkeerd</th></tr></thead><tbody><tr><th>Geen geheugen</th><td>29/60</td><td>0/30</td><td>0/30</td><td>0/30</td><td>0/30</td><td>0</td><td>0</td></tr><tr><th>Ongevalideerd</th><td>41/60</td><td>27/30</td><td>24/30</td><td>21/30</td><td>13/30</td><td>0</td><td>0</td></tr><tr><th>Gevalideerd</th><td>41/60</td><td>27/30</td><td>24/30</td><td>21/30</td><td>13/30</td><td>0</td><td>0</td></tr></tbody></table><small>De vier geheugenkolommen gebruiken uitsluitend bekende contracten met uitval als noemer. Fouten en blokkades tellen alle taken.</small></div>
+<div class="card scroll"><table><thead><tr><th>Taaktype</th><th>Geen geheugen</th><th>Ongevalideerd</th><th>Gevalideerd</th></tr></thead><tbody><tr><th>changed-version</th><td>5/5</td><td>5/5</td><td>5/5</td></tr><tr><th>conflict</th><td>5/5</td><td>5/5</td><td>5/5</td></tr><tr><th>known-outage</th><td>0/30</td><td>13/30</td><td>13/30</td></tr><tr><th>missing-input</th><td>5/5</td><td>5/5</td><td>5/5</td></tr><tr><th>online-control</th><td>9/10</td><td>8/10</td><td>8/10</td></tr><tr><th>unknown-contract</th><td>5/5</td><td>5/5</td><td>5/5</td></tr></tbody></table></div>
+<details class="card" open><summary>Resultaten per onafhankelijke seed</summary><div class="scroll"><table><thead><tr><th>Seed</th><th>Geen geheugen</th><th>Ongevalideerd</th><th>Gevalideerd</th></tr></thead><tbody><tr><th>60701</th><td>6/12 · hergebruik 0/6</td><td>7/12 · hergebruik 4/6</td><td>7/12 · hergebruik 4/6</td></tr><tr><th>60702</th><td>6/12 · hergebruik 0/6</td><td>9/12 · hergebruik 3/6</td><td>9/12 · hergebruik 3/6</td></tr><tr><th>60703</th><td>5/12 · hergebruik 0/6</td><td>9/12 · hergebruik 6/6</td><td>9/12 · hergebruik 6/6</td></tr><tr><th>60704</th><td>6/12 · hergebruik 0/6</td><td>8/12 · hergebruik 5/6</td><td>8/12 · hergebruik 5/6</td></tr><tr><th>60705</th><td>6/12 · hergebruik 0/6</td><td>8/12 · hergebruik 3/6</td><td>8/12 · hergebruik 3/6</td></tr></tbody></table></div><pre>{
+  &quot;unvalidated_memory&quot;: {
+    &quot;wins&quot;: 14,
+    &quot;losses&quot;: 2,
+    &quot;ties&quot;: 44,
+    &quot;seed_completion_rate_differences&quot;: [
+      0.08333333333333333,
+      0.25,
+      0.3333333333333333,
+      0.16666666666666666,
+      0.16666666666666666
+    ],
+    &quot;mean_seed_difference&quot;: 0.19999999999999998,
+    &quot;seed_difference_range&quot;: [
+      0.08333333333333333,
+      0.3333333333333333
+    ],
+    &quot;seed_sample_sd&quot;: 0.09501461875826149,
+    &quot;independent_units&quot;: 5,
+    &quot;uncertainty&quot;: &quot;Descriptive seed variation only; five authored datasets do not establish superiority or generalization.&quot;
+  },
+  &quot;validated_memory&quot;: {
+    &quot;wins&quot;: 14,
+    &quot;losses&quot;: 2,
+    &quot;ties&quot;: 44,
+    &quot;seed_completion_rate_differences&quot;: [
+      0.08333333333333333,
+      0.25,
+      0.3333333333333333,
+      0.16666666666666666,
+      0.16666666666666666
+    ],
+    &quot;mean_seed_difference&quot;: 0.19999999999999998,
+    &quot;seed_difference_range&quot;: [
+      0.08333333333333333,
+      0.3333333333333333
+    ],
+    &quot;seed_sample_sd&quot;: 0.09501461875826149,
+    &quot;independent_units&quot;: 5,
+    &quot;uncertainty&quot;: &quot;Descriptive seed variation only; five authored datasets do not establish superiority or generalization.&quot;
+  }
+}</pre></details>
+<details class="card"><summary>Werkelijk verbruik</summary><div class="scroll"><table><thead><tr><th>Geheugen</th><th>Modelcalls</th><th>Inputtokens</th><th>Outputtokens</th><th>Kalibratieverzoeken</th><th>Tijd</th></tr></thead><tbody><tr><th>Geen geheugen</th><td>201</td><td>198,868</td><td>10,283</td><td>56</td><td>141.73s</td></tr><tr><th>Ongevalideerd</th><td>239</td><td>294,563</td><td>16,334</td><td>20</td><td>219.75s</td></tr><tr><th>Gevalideerd</th><td>238</td><td>291,821</td><td>16,066</td><td>21</td><td>215.82s</td></tr></tbody></table></div><p>Gemeenschappelijk leren: 85 modelcalls, 80751 inputtokens, 4557 outputtokens. Fysiek eenmaal verzameld, gelijk toegerekend aan elke conditie.</p><p>Fysiek totaal: 763 lokale modelcalls. Betaalde API-aanroepen in deze benchmark: 0.</p></details>
+<details class="card" open><summary>Wat deze proef wel en niet aantoont</summary><ul><li>Authored affine family and one local model; supplied functional form and exact arithmetic.</li><li>Memory supplies missing information. No-memory outage tasks lack sufficient evidence; this is part of the intervention, not proof of general intelligence.</li><li>Observed retrieval and use are external behavior; no claim about hidden cognition or weight updates.</li><li>Shared write protection can mask invalid memories at the commit stage; failed normalization and blocked attempts remain visible.</li><li>Five seeds are a pilot; seed variation is descriptive, not a confidence bound or independent replication.</li><li>Tools, prompts and limits match; realized cost, token and cache/order effects may differ.</li><li>Jev design review cost is separate; no new paid API requests in this benchmark.</li><li>Native Windows benchmark, browser rendering, other models and hosted CI remain unverified.</li></ul></details>
+<footer><p>Deze afgeleide viewer verduidelijkt de terugleesmaat en laat lange hashes op een telefoon afbreken. Bronresultaten en oorspronkelijke report.html zijn ongewijzigd. Gecontroleerde kopieën van de drie gelinkte bewijsbestanden staan naast deze pagina.</p><small>Model: qwen3.5:4b · digest 2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd<br>Ruwe bewijzen: <a href="report.json">report.json</a>, <a href="protocol.json">protocol.json</a>, <a href="rollouts.jsonl">rollouts.jsonl</a>. Verificatie gebruikt opgeslagen antwoorden en doet geen nieuwe modelcalls.</small></footer></main></html>

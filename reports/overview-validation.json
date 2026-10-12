@@ -1,0 +1,12 @@
+{
+  "source": "reports/reuse-viewer/index.html",
+  "screenshot": "reports/overview.png",
+  "viewport": {
+    "width": 1280,
+    "height": 980
+  },
+  "actual_rows": 3,
+  "presentation": "disclosures collapsed",
+  "page_errors": [],
+  "remote_page_requests": []
+}

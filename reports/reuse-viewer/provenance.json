@@ -1,0 +1,10 @@
+{
+  "source": "runs/reuse-milestone-20261012/report.html",
+  "source_sha256": "c84fd7fa629da7cbc08a2cdbafa307b9fb8fdd44d65f56472537924818c5539e",
+  "changes": [
+    "footer hash wrapping",
+    "completion column explicitly includes readback",
+    "provenance note"
+  ],
+  "raw_data_changed": false
+}

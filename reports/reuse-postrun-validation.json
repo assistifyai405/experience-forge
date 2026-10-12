@@ -1,0 +1,20 @@
+{
+  "linux_tests_passed": 53,
+  "windows_tests_passed": 53,
+  "windows_utf8_required_for_portable_artifacts": true,
+  "linux_and_windows_replay": {
+    "rollouts": 195,
+    "final_rollouts": 180,
+    "inference_calls": 763,
+    "new_calls": 0
+  },
+  "captured_requests_audited": 763,
+  "initial_memory_injected": false,
+  "hidden_grade_fields_in_proposer": false,
+  "identical_model_options": true,
+  "frozen_source_unchanged": true,
+  "browser_validation": "reuse-browser-validation.json",
+  "native_windows_model_inference_verified": false,
+  "raw_viewer_mobile_overflow": "preserved; only derived viewer adds footer wrapping",
+  "original_evidence_manifest_sha256": "e854459de86e31a916385845ccd604fe4fe4e41018b76b6598e1789212b52157"
+}

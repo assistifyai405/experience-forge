@@ -1,0 +1,60 @@
+{
+  "isError": false,
+  "model": "jev-1.13.0",
+  "answers": {
+    "bouwrichting": {
+      "type": "choice",
+      "choice": "kalibratieuitval",
+      "probabilities": {
+        "kalibratieuitval": 1,
+        "herhaal_huidige_proef": 0,
+        "breid_taakfamilies_uit": 0,
+        "onvoldoende_informatie": 0
+      },
+      "confidence": 1
+    },
+    "eerlijkheid": {
+      "type": "score",
+      "score": 3.96,
+      "probabilities": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0.04,
+        "4": 0.96
+      },
+      "legend": {
+        "0": "Onvoldoende gespecificeerd om eerlijkheid te beoordelen",
+        "1": "Grote risico’s op een vertekende vergelijking",
+        "2": "Deels gespecificeerd, wezenlijke waarborgen ontbreken",
+        "3": "De belangrijkste waarborgen zijn beschreven, implementatiecontrole blijft nodig",
+        "4": "Sterk gespecificeerde pilot met expliciete vergelijking, scheiding en verificatie"
+      },
+      "confidence": 0.97
+    },
+    "belangrijkste_aanscherping": {
+      "type": "choice",
+      "choice": "operationeel_hergebruik",
+      "probabilities": {
+        "operationeel_hergebruik": 0.61,
+        "bewijsscheiding": 0.29,
+        "steekproef": 0.07,
+        "geen_aanscherping": 0.02,
+        "onvoldoende_informatie": 0.01
+      },
+      "confidence": 0.51
+    }
+  },
+  "usage": {
+    "input_tokens": 2281,
+    "output_tokens": 179
+  },
+  "timings": {
+    "credentials_ms": 503,
+    "provider_ms": 336,
+    "validation_ms": 0
+  },
+  "elapsed_ms": 839,
+  "advisory_only": true,
+  "actions_executed": false
+}

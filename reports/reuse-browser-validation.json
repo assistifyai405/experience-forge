@@ -1,0 +1,24 @@
+{
+  "browser": "existing Microsoft Edge, Playwright headless",
+  "platform": "win32",
+  "checks": [
+    {
+      "width": 1280,
+      "page_overflow": false,
+      "comparison_rows": 3,
+      "disclosure_toggle": true,
+      "page_errors": [],
+      "remote_page_requests": [],
+      "screenshot": "reports/reuse-1280.png"
+    },
+    {
+      "width": 390,
+      "page_overflow": false,
+      "comparison_rows": 3,
+      "disclosure_toggle": true,
+      "page_errors": [],
+      "remote_page_requests": [],
+      "screenshot": "reports/reuse-390.png"
+    }
+  ]
+}

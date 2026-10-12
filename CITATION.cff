@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Please cite this software and its frozen pilot protocol when using the code or captured evidence."
+type: software
+title: "Experience Forge: observable external-memory reuse under calibration outage"
+authors:
+  - name: "Experience Forge contributors"
+version: 0.4.0
+date-released: 2026-10-12
+license: MIT
+abstract: >-
+  A local research prototype comparing no memory, unvalidated model-generated memory
+  and validated model-generated memory after conversation reset. One authored
+  affine connector task family, one local tool agent, independent qualification,
+  evidence-bound writes, frozen captured pilot and model-free replay. External
+  information reuse is measured separately from verified task completion.
